@@ -619,8 +619,10 @@ public class ManualActivity extends BaseActivity implements SurfaceHolder.Callba
 
     private void cycleVisibleViews()
     {
-        if (++m_viewFlags > VIEW_FLAG_MASK)
+        if (++m_viewFlags > VIEW_FLAG_MASK) {
+            setLeftViewVisibility(false);
             m_viewFlags = 0;
+        }
         updateViewVisibility();
     }
 
